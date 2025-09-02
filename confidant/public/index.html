@@ -1,0 +1,111 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" class="no-js" data-ng-controller="ConfidantMainCtrl" ng-class="pageClass" ng-app="confidantApp" data-is-mobile ng-csp>
+<head>
+    <meta charset="utf-8">
+    <title>Confidant - Your secret keeper</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+
+    <!-- build:css styles/main.css -->
+    <!-- injector:css -->
+    <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/components/angular-xeditable/dist/css/xeditable.css">
+    <link rel="stylesheet" href="/components/angular/angular-csp.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <!-- endinjector -->
+    <!-- endbuild -->
+</head>
+<body>
+    <!--[if lt IE 9]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div id="loading-spinner" loading-spinner="data-loading"></div>
+    <header id="page-header" class="header">
+        <nav id="site-navigation">
+          <div class="container-fluid">
+            <p class="navbar-text pull-right" style="text-align: right">
+              Logged in as {{ user.email }} | <a href="loggedout">Log Out <span class="glyphicon glyphicon-log-out"></span></a>
+            </p>
+            <h1><a href="#"><img class="site-logo visible-sm visible-md visible-lg" src="images/logo.svg"></a></h1>
+          </div>
+        </nav>
+    </header>
+
+    <div id="page-navigation" class="container-fluid container-bottomborder has-margin-bottom" role="navigation" ng-controller="common.NavCtrl">
+      <ul class="nav nav-pills has-margin-bottom">
+        <li role="presentation" ng-class="{ 'active': viewLocation === 'resources' }"><a href="#/resources">Resources <span class="glyphicon glyphicon-lock"></span></a></li>
+        <li role="presentation" ng-class="{ 'active': viewLocation === 'history' }"><a href="#/history">History <span class="glyphicon glyphicon-time"></span></a></li>
+      </ul>
+    </div>
+    <div ui-view="main" class="container-fluid container-body"></div>
+
+    <!-- build:js scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="components/es5-shim/es5-shim.js"></script>
+    <script src="components/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- endbuild -->
+
+    <!-- build:js scripts/scripts.js -->
+    <!-- injector:js -->
+    <script src="/components/lodash/lodash.js"></script>
+    <script src="/components/jquery/dist/jquery.js"></script>
+    <script src="/components/angular/angular.js"></script>
+    <script src="/components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/components/angular-resource/angular-resource.js"></script>
+    <script src="/components/angular-cookies/angular-cookies.js"></script>
+    <script src="/components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/components/angular-animate/angular-animate.js"></script>
+    <script src="/components/angular-touch/angular-touch.js"></script>
+    <script src="/components/angular-route/angular-route.js"></script>
+    <script src="/components/angular-ui-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/components/angular-xeditable/dist/js/xeditable.js"></script>
+    <script src="/components/@uirouter/angularjs/release/angular-ui-router.js"></script>
+    <script src="/components/spin.js/spin.js"></script>
+    <script src="/modules/app.js"></script>
+    <script src="/modules/common/common.js"></script>
+    <script src="/modules/common/constants.js"></script>
+    <script src="/modules/common/controllers/NavCtrl.js"></script>
+    <script src="/modules/common/controllers/controllers.js"></script>
+    <script src="/modules/common/directives/directives.js"></script>
+    <script src="/modules/common/directives/loading_spinner.js"></script>
+    <script src="/modules/common/services/NavService.js"></script>
+    <script src="/modules/common/services/body.js"></script>
+    <script src="/modules/common/services/clientconfig.js"></script>
+    <script src="/modules/common/services/http.js"></script>
+    <script src="/modules/common/services/services.js"></script>
+    <script src="/modules/common/services/spin-on.js"></script>
+    <script src="/modules/common/services/userinfo.js"></script>
+    <script src="/modules/history/controllers/BlindCredentialHistoryCtrl.js"></script>
+    <script src="/modules/history/controllers/CredentialHistoryCtrl.js"></script>
+    <script src="/modules/history/controllers/ResourceHistoryCtrl.js"></script>
+    <script src="/modules/history/controllers/ServiceHistoryCtrl.js"></script>
+    <script src="/modules/history/controllers/controllers.js"></script>
+    <script src="/modules/history/history.js"></script>
+    <script src="/modules/history/services/archive.js"></script>
+    <script src="/modules/history/services/services.js"></script>
+    <script src="/modules/resources/controllers/BlindCredentialDetailsCtrl.js"></script>
+    <script src="/modules/resources/controllers/CredentialDetailsCtrl.js"></script>
+    <script src="/modules/resources/controllers/ResourceCtrl.js"></script>
+    <script src="/modules/resources/controllers/ServiceDetailsCtrl.js"></script>
+    <script src="/modules/resources/controllers/controllers.js"></script>
+    <script src="/modules/resources/resources.js"></script>
+    <script src="/modules/resources/services/blindcredentials.js"></script>
+    <script src="/modules/resources/services/confidantservices.js"></script>
+    <script src="/modules/resources/services/credentials.js"></script>
+    <script src="/modules/resources/services/roles.js"></script>
+    <script src="/modules/resources/services/services.js"></script>
+    <script src="/modules/routes/history.js"></script>
+    <script src="/modules/routes/resources.js"></script>
+    <script src="/modules/routes/routes.js"></script>
+    <!-- endinjector -->
+    <script src="/modules/app.js"></script>
+    <!-- endbuild -->
+</body>
+</html>
